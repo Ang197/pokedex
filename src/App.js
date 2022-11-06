@@ -7,10 +7,10 @@ import axios from "axios";
 function App() {
 
   //constant variables with use states that allow us store data into an array, and display a default amount of pokemon when first loaded
-  const [pokemon, setPokemon] = useState("charizard");
+  const [pokemon, setPokemon] = useState("");
   const [pokemonData, setPokemonData] = useState([]);
   const [pokemonType, setPokemonType] = useState("");
-  const [mainUrl, setMainUrl] = useState('https://pokeapi.co/api/v2/pokemon?limit=3');
+  const [mainUrl, setMainUrl] = useState('https://pokeapi.co/api/v2/pokemon?limit=151');
   
   //This is meant to handle any changes occur when grabbing the targeted object/pokemon
   const handleChange = (e) => {
@@ -72,7 +72,9 @@ function App() {
 
   return (
     <div className="app-pokemon-container">
-      <img className="logo"src ={pokemonLogo} alt="International_Pokémon_logo.svg.png" />
+      <div onClick={() => alert("This is a logo")}>
+        <img className="logo"src ={pokemonLogo} alt="International_Pokémon_logo.svg.png" />
+      </div>
       <form onSubmit={handleSubmit}>
         <label>
           <input
